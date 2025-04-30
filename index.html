@@ -76,6 +76,23 @@
             transform: translateY(-10px);
         }
         
+        .pro-card {
+            border-top: 5px solid var(--primary);
+            position: relative;
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
         .plan-name {
             font-size: 1.5rem;
             font-weight: 700;
@@ -84,29 +101,25 @@
         }
         
         .price-container {
-            display: flex;
-            justify-content: space-between;
             margin: 1rem 0;
         }
         
-        .price-box {
-            flex: 1;
-        }
-        
-        .price-label {
-            font-size: 0.9rem;
-            color: var(--gray);
-            margin-bottom: 0.3rem;
-        }
-        
         .price {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 700;
         }
         
-        .annual-price {
-            font-size: 0.9rem;
+        .price small {
+            font-size: 1rem;
+            font-weight: 400;
             color: var(--gray);
+        }
+        
+        .annual-price {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
         }
         
         .features {
@@ -149,6 +162,12 @@
             font-weight: 700;
         }
         
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        
         .select-btn {
             background-color: var(--primary);
             color: white;
@@ -164,6 +183,23 @@
         
         .select-btn:hover {
             background-color: #e05d00;
+        }
+        
+        .demo-btn {
+            background-color: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+        }
+        
+        .demo-btn:hover {
+            background-color: var(--light);
         }
         
         .country-toggle {
@@ -220,22 +256,16 @@
         </div>
         
         <div class="pricing-container" id="india-pricing">
-            <!-- Menu Digitalization - India -->
+            <!-- Basic Plan - India -->
             <div class="pricing-card">
-                <div class="plan-name">Menu Digitalization</div>
+                <div class="plan-name">Basic</div>
                 <div class="price-container">
-                    <div class="price-box">
-                        <div class="price-label">Monthly</div>
-                        <div class="price">₹300</div>
-                    </div>
-                    <div class="price-box">
-                        <div class="price-label">Yearly (Save 17%)</div>
-                        <div class="price">₹3000</div>
-                    </div>
+                    <div class="price">₹300<small>/month</small></div>
+                    <div class="annual-price">or ₹3000/year (Save 17%)</div>
                 </div>
                 
                 <div class="features">
-                    <div class="feature-category">FEATURES</div>
+                    <div class="feature-category">MENU DIGITALIZATION:</div>
                     <div class="feature-item">Theme color customization</div>
                     <div class="feature-item">Menu customization (images, prices, names)</div>
                     <div class="feature-item">Reorder categories</div>
@@ -243,72 +273,47 @@
                     <div class="feature-item">Google reviews integration</div>
                 </div>
                 
-                <button class="select-btn" onclick="sendWhatsAppMessage('Menu Digitalization', '₹300/month or ₹3000/year', 'India')">Select Plan</button>
+                <div class="btn-group">
+                    <button class="select-btn" onclick="sendWhatsAppMessage('Basic Plan', '₹300/month or ₹3000/year', 'India')">Select Plan</button>
+                    <button class="demo-btn" onclick="window.open('https://www.cravings.live/hotels/40f5bf48-cd08-4cab-bd42-85441ef12431', '_blank')">View Demo</button>
+                </div>
             </div>
             
-            <!-- Table Ordering System - India -->
-            <div class="pricing-card" style="border-top: 5px solid var(--primary);">
-                <div class="plan-name">Table Ordering System</div>
+            <!-- Pro Plan - India -->
+            <div class="pricing-card pro-card">
+                <div class="popular-badge">MOST POPULAR</div>
+                <div class="plan-name">Pro</div>
                 <div class="price-container">
-                    <div class="price-box">
-                        <div class="price-label">Monthly</div>
-                        <div class="price">₹500</div>
-                    </div>
-                    <div class="price-box">
-                        <div class="price-label">Yearly (Save 17%)</div>
-                        <div class="price">₹5000</div>
-                    </div>
+                    <div class="price">₹500<small>/month</small></div>
+                    <div class="annual-price">or ₹5000/year (Save 17%)</div>
                 </div>
                 
                 <div class="features">
-                    <div class="feature-category">ALL MENU DIGITALIZATION FEATURES PLUS:</div>
+                    <div class="feature-category">ALL BASIC FEATURES PLUS:</div>
+                    <div class="feature-item">Table ordering system</div>
                     <div class="feature-item">Receive orders via WhatsApp</div>
                     <div class="feature-item">Admin dashboard for order tracking</div>
+                    <div class="feature-item">Outside delivery orders via WhatsApp</div>
                 </div>
                 
-                <button class="select-btn" onclick="sendWhatsAppMessage('Table Ordering System', '₹500/month or ₹5000/year', 'India')">Select Plan</button>
-            </div>
-            
-            <!-- Outside Delivery - India -->
-            <div class="pricing-card">
-                <div class="plan-name">Outside Delivery</div>
-                <div class="price-container">
-                    <div class="price-box">
-                        <div class="price-label">Monthly</div>
-                        <div class="price">₹500</div>
-                    </div>
-                    <div class="price-box">
-                        <div class="price-label">Yearly (Save 17%)</div>
-                        <div class="price">₹5000</div>
-                    </div>
+                <div class="btn-group">
+                    <button class="select-btn" onclick="sendWhatsAppMessage('Pro Plan', '₹500/month or ₹5000/year', 'India')">Select Plan</button>
+                    <button class="demo-btn" onclick="window.open('https://www.cravings.live/hotels/373a15f9-9c58-4e34-ae07-b272e578928f', '_blank')">View Demo</button>
                 </div>
-                
-                <div class="features">
-                    <div class="feature-category">ALL TABLE ORDERING FEATURES PLUS:</div>
-                    <div class="feature-item">Accept outside delivery orders via WhatsApp</div>
-                </div>
-                
-                <button class="select-btn" onclick="sendWhatsAppMessage('Outside Delivery', '₹500/month or ₹5000/year', 'India')">Select Plan</button>
             </div>
         </div>
         
         <div class="pricing-container" id="international-pricing" style="display: none;">
-            <!-- Menu Digitalization - International -->
+            <!-- Basic Plan - International -->
             <div class="pricing-card">
-                <div class="plan-name">Menu Digitalization</div>
+                <div class="plan-name">Basic</div>
                 <div class="price-container">
-                    <div class="price-box">
-                        <div class="price-label">Monthly</div>
-                        <div class="price">$12</div>
-                    </div>
-                    <div class="price-box">
-                        <div class="price-label">Yearly (Save 17%)</div>
-                        <div class="price">$120</div>
-                    </div>
+                    <div class="price">₹900<small>/month</small></div>
+                    <div class="annual-price">or ₹10000/year (Save 17%)</div>
                 </div>
                 
                 <div class="features">
-                    <div class="feature-category">FEATURES</div>
+                    <div class="feature-category">MENU DIGITALIZATION:</div>
                     <div class="feature-item">Theme color customization</div>
                     <div class="feature-item">Menu customization (images, prices, names)</div>
                     <div class="feature-item">Reorder categories</div>
@@ -316,52 +321,33 @@
                     <div class="feature-item">Google reviews integration</div>
                 </div>
                 
-                <button class="select-btn" onclick="sendWhatsAppMessage('Menu Digitalization', '$12/month or $120/year', 'International')">Select Plan</button>
+                <div class="btn-group">
+                    <button class="select-btn" onclick="sendWhatsAppMessage('Basic Plan', '$12/month or $120/year', 'International')">Select Plan</button>
+                    <button class="demo-btn" onclick="window.open('https://www.cravings.live/hotels/40f5bf48-cd08-4cab-bd42-85441ef12431', '_blank')">View Demo</button>
+                </div>
             </div>
             
-            <!-- Table Ordering System - International -->
-            <div class="pricing-card" style="border-top: 5px solid var(--primary);">
-                <div class="plan-name">Table Ordering System</div>
+            <!-- Pro Plan - International -->
+            <div class="pricing-card pro-card">
+                <div class="popular-badge">MOST POPULAR</div>
+                <div class="plan-name">Pro</div>
                 <div class="price-container">
-                    <div class="price-box">
-                        <div class="price-label">Monthly</div>
-                        <div class="price">$12</div>
-                    </div>
-                    <div class="price-box">
-                        <div class="price-label">Yearly (Save 17%)</div>
-                        <div class="price">$120</div>
-                    </div>
+                    <div class="price">₹900<small>/month</small></div>
+                    <div class="annual-price">or ₹10000/year (Save 17%)</div>
                 </div>
                 
                 <div class="features">
-                    <div class="feature-category">ALL MENU DIGITALIZATION FEATURES PLUS:</div>
+                    <div class="feature-category">ALL BASIC FEATURES PLUS:</div>
+                    <div class="feature-item">Table ordering system</div>
                     <div class="feature-item">Receive orders via WhatsApp</div>
                     <div class="feature-item">Admin dashboard for order tracking</div>
+                    <div class="feature-item">Outside delivery orders via WhatsApp</div>
                 </div>
                 
-                <button class="select-btn" onclick="sendWhatsAppMessage('Table Ordering System', '$12/month or $120/year', 'International')">Select Plan</button>
-            </div>
-            
-            <!-- Outside Delivery - International -->
-            <div class="pricing-card">
-                <div class="plan-name">Outside Delivery</div>
-                <div class="price-container">
-                    <div class="price-box">
-                        <div class="price-label">Monthly</div>
-                        <div class="price">$12</div>
-                    </div>
-                    <div class="price-box">
-                        <div class="price-label">Yearly (Save 17%)</div>
-                        <div class="price">$120</div>
-                    </div>
+                <div class="btn-group">
+                    <button class="select-btn" onclick="sendWhatsAppMessage('Pro Plan', '$12/month or $120/year', 'International')">Select Plan</button>
+                    <button class="demo-btn" onclick="window.open('https://www.cravings.live/hotels/373a15f9-9c58-4e34-ae07-b272e578928f', '_blank')">View Demo</button>
                 </div>
-                
-                <div class="features">
-                    <div class="feature-category">ALL TABLE ORDERING FEATURES PLUS:</div>
-                    <div class="feature-item">Accept outside delivery orders via WhatsApp</div>
-                </div>
-                
-                <button class="select-btn" onclick="sendWhatsAppMessage('Outside Delivery', '$12/month or $120/year', 'International')">Select Plan</button>
             </div>
         </div>
         
@@ -387,7 +373,7 @@
         
         function sendWhatsAppMessage(planName, price, region) {
             const phoneNumber = "+918590115462";
-            const message = `Hi Cravings Team,%0A%0AI'm interested in your ${planName} plan (${region}).%0A%0APlan: ${planName}%0APrice: ${price}%0ARegion: ${region}%0A%0APlease contact me with more details.`;
+            const message = `Hi Cravings Team,%0A%0AI'm interested in your ${planName} (${region}).%0A%0APlan: ${planName}%0APrice: ${price}%0ARegion: ${region}%0A%0APlease contact me with more details.`;
             
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
             window.open(whatsappUrl, '_blank');
