@@ -25,55 +25,56 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1.5rem;
+            overflow-x: hidden;
         }
         
         header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
         
         h1 {
             color: var(--primary);
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 0.5rem;
         }
         
         h2 {
             color: var(--secondary);
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 400;
             margin-top: 0;
         }
         
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: var(--gray);
             max-width: 700px;
             margin: 0 auto;
+            padding: 0 1rem;
         }
         
         .pricing-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
         }
         
         .pricing-card {
             background: white;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            padding: 2rem;
-            flex: 1;
-            min-width: 300px;
+            padding: 1.5rem;
+            width: 100%;
             max-width: 350px;
             transition: transform 0.3s;
         }
         
         .pricing-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
         }
         
         .pro-card {
@@ -94,7 +95,7 @@
         }
         
         .plan-name {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 0.5rem;
@@ -105,7 +106,7 @@
         }
         
         .price {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 700;
         }
         
@@ -119,17 +120,17 @@
             color: var(--gray);
             font-size: 0.9rem;
             margin-bottom: 1.5rem;
-            font-weight: 700;
         }
         
         .features {
-            margin: 2rem 0;
+            margin: 1.5rem 0;
         }
         
         .feature-item {
             margin-bottom: 0.8rem;
             padding-left: 1.5rem;
             position: relative;
+            font-size: 0.95rem;
         }
         
         .feature-item:before {
@@ -142,18 +143,19 @@
         .feature-category {
             font-weight: 700;
             margin: 1.5rem 0 0.5rem;
+            font-size: 0.95rem;
         }
         
         .limitations {
             background-color: var(--light);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 10px;
-            margin-top: 3rem;
+            margin-top: 2rem;
             text-align: center;
         }
         
         .limitations p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin: 0;
         }
         
@@ -172,7 +174,7 @@
             background-color: var(--primary);
             color: white;
             border: none;
-            padding: 0.8rem 2rem;
+            padding: 0.8rem;
             border-radius: 5px;
             font-size: 1rem;
             font-weight: 600;
@@ -189,7 +191,7 @@
             background-color: white;
             color: var(--primary);
             border: 2px solid var(--primary);
-            padding: 0.8rem 2rem;
+            padding: 0.8rem;
             border-radius: 5px;
             font-size: 1rem;
             font-weight: 600;
@@ -205,14 +207,15 @@
         .country-toggle {
             display: flex;
             justify-content: center;
-            margin: 1rem 0 2rem;
+            margin: 1rem 0 1.5rem;
         }
         
         .toggle-btn {
-            padding: 0.5rem 1.5rem;
+            padding: 0.5rem 1rem;
             background: white;
             border: 1px solid #ddd;
             cursor: pointer;
+            font-size: 0.9rem;
         }
         
         .toggle-btn:first-child {
@@ -229,15 +232,74 @@
             border-color: var(--primary);
         }
         
+        /* Mobile-specific adjustments */
         @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.2rem;
+            }
+            
             .pricing-container {
                 flex-direction: column;
                 align-items: center;
+                gap: 1.5rem;
             }
             
             .pricing-card {
-                width: 100%;
-                max-width: none;
+                max-width: 100%;
+                padding: 1.2rem;
+            }
+            
+            .plan-name {
+                font-size: 1.2rem;
+            }
+            
+            .price {
+                font-size: 1.6rem;
+            }
+            
+            .feature-item {
+                font-size: 0.9rem;
+            }
+            
+            .country-toggle {
+                margin: 0.5rem 0 1rem;
+            }
+            
+            .toggle-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            h2 {
+                font-size: 1.1rem;
+            }
+            
+            .subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .pricing-card {
+                padding: 1rem;
+            }
+            
+            .select-btn,
+            .demo-btn {
+                padding: 0.7rem;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -308,8 +370,8 @@
             <div class="pricing-card">
                 <div class="plan-name">Basic</div>
                 <div class="price-container">
-                    <div class="price">₹900<small>/month</small></div>
-                    <div class="annual-price">or ₹10000/year (Save 17%)</div>
+                    <div class="price">$12<small>/month</small></div>
+                    <div class="annual-price">or $120/year (Save 17%)</div>
                 </div>
                 
                 <div class="features">
@@ -332,8 +394,8 @@
                 <div class="popular-badge">MOST POPULAR</div>
                 <div class="plan-name">Pro</div>
                 <div class="price-container">
-                    <div class="price">₹900<small>/month</small></div>
-                    <div class="annual-price">or ₹10000/year (Save 17%)</div>
+                    <div class="price">$12<small>/month</small></div>
+                    <div class="annual-price">or $120/year (Save 17%)</div>
                 </div>
                 
                 <div class="features">
